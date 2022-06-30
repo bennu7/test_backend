@@ -1,0 +1,43 @@
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// The current database to use.
+use('lybra');
+
+// db.getCollection('clasements').find()
+
+db.getCollection('clasements').aggregate([
+  {
+    $group: {
+    //   _id: "62bb4807b232b7c34e597c55",
+      home: "persib",
+      count: {
+        $sum:1
+      }
+    }
+  }
+])
+
+// Search for documents in the current collection.
+// db.getCollection('clasements')
+//   .find(
+//     {
+//       /*
+//       * Filter
+//       * fieldA: value or expression
+//       */
+//     },
+//     {
+//       /*
+//       * Projection
+//       * _id: 0, // exclude _id
+//       * fieldA: 1 // include field
+//       */
+//     }
+//   )
+//   .sort({
+//     /*
+//     * fieldA: 1 // ascending
+//     * fieldB: -1 // descending
+//     */
+//   });
